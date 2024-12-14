@@ -4,7 +4,7 @@
   "description": "An API for the once upon a time site",
   "main": "index.js",
   "scripts": {
-    "install-custom": "node scripts/install.js",
+    "install-custom": "node scripts/install-custom.js",
     "init-db": "ts-node scripts/init-db.ts",
     "copy-env": "cp ./.env ./dist/.env",
     "build": "tsc && yarn copy-env",
