@@ -4,10 +4,6 @@
   "description": "An API for the once upon a time site",
   "main": "index.js",
   "scripts": {
-    "deploy": "set SLS_DEBUG=* && sls deploy --stage production",
-    "url": "ts-node ./url-mapping.ts",
-    "check": "ncu --packageFile package.json",
-    "evergreen": "ncu -ua --packageFile package.json",
     "install-custom": "node scripts/install.js",
     "init-db": "ts-node scripts/init-db.ts",
     "copy-env": "cp ./.env ./dist/.env",

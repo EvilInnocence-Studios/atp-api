@@ -2,7 +2,7 @@ const process = require('process');
 const fs = require('fs');
 const {execSync} = require('child_process');
 
-const repoBase = "https://github.com/DaemonAlchemist/";
+const repoBase = "https://github.com/EvilInnocence-Studios/";
 
 // Get the list of modules
 const modules = JSON.parse(fs.readFileSync("./package.custom.json"));

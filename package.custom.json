@@ -1,6 +1,10 @@
 {
-    "common": {
-        "repo": "once-upon-a-ti.me-common",
+    "core": {
+        "repo": "atp-core",
+        "branch": "main"
+    },
+    "uac": {
+        "repo": "atp-uac",
         "branch": "main"
     }
 }
