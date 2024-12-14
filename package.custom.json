@@ -1,10 +1,18 @@
 {
     "core": {
-        "repo": "atp-core",
+        "repo": "atp-core-api",
+        "branch": "main"
+    },
+    "core-shared": {
+        "repo": "atp-core-shared",
         "branch": "main"
     },
     "uac": {
-        "repo": "atp-uac",
+        "repo": "atp-uac-api",
+        "branch": "main"
+    },
+    "uac-shared": {
+        "repo": "atp-uac-shared",
         "branch": "main"
     }
 }

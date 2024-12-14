@@ -10,6 +10,6 @@
       "emitDecoratorMetadata": true           // Emit metadata for runtime reflection (used by libraries like TypeORM or InversifyJS)
     },
     "include": ["src/**/*.ts"],               // Specify files to include
-    "exclude": ["../node_modules/**", "node_modules/**", "dist"]       // Exclude unnecessary directories
+    "exclude": ["node_modules/**", "dist"]    // Exclude unnecessary directories
   }
   
