@@ -1,0 +1,10 @@
+ToDo
+====
+test UAC api
+    - login and get token
+    - make searches more general and add optional params
+    - byId routes not working
+implement permission handling
+finish implementing api
+implement row level security decorators
+    - Need to allow for admin or non-owner overrides

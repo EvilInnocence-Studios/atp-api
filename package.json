@@ -1,0 +1,44 @@
+{
+  "name": "api.evilinnocence.com",
+  "version": "0.0.1",
+  "description": "An API for the once upon a time site",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "set SLS_DEBUG=* && sls deploy --stage production",
+    "url": "ts-node ./url-mapping.ts",
+    "check": "ncu --packageFile package.json",
+    "evergreen": "ncu -ua --packageFile package.json",
+    "install-custom": "node scripts/install.js",
+    "init-db": "ts-node scripts/init-db.ts",
+    "copy-env": "cp ./.env ./dist/.env",
+    "build": "tsc && yarn copy-env",
+    "start": "node ./dist/index.js",
+    "ts-start": "ts-node ./src/index.ts",
+    "dev": "yarn copy-env && tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "profile": "node -r ts-node/register --prof ./index.ts"
+  },
+  "author": "Andrew Wittrock",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/crypto-js": "^4.0.2",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^8.5.4",
+    "@types/node": "^22.10.1",
+    "ts-node": "^10.1.0",
+    "ts-node-dev": "^2.0.0",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "aws-sdk": "^2.973.0",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.4.6",
+    "express": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^3.1.0",
+    "pg": "^8.7.1",
+    "serverless-api-boilerplate": "^0.4.2",
+    "ts-functional": "^1.14.0"
+  }
+}
