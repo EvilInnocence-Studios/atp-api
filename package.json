@@ -4,14 +4,15 @@
   "description": "An API for the once upon a time site",
   "main": "index.js",
   "scripts": {
-    "install-custom": "node scripts/install-custom.js",
-    "init-db": "ts-node scripts/init-db.ts",
+    "init-db": "ts-node ./src/core/init-db.ts",
     "copy-env": "cp ./.env ./dist/.env",
     "build": "tsc && yarn copy-env",
     "start": "node ./dist/src/core/index.js",
     "ts-start": "ts-node ./src/core/index.ts",
     "dev": "yarn copy-env && tsc-watch --onSuccess \"node ./dist/src/core/index.js\"",
-    "profile": "node -r ts-node/register --prof ./index.ts"
+    "profile": "node -r ts-node/register --prof ./index.ts",
+    "status": "node ./src/core-shared/scripts/status.mjs",
+    "install-custom": "node ./src/core-shared/scripts/install-custom.js"
   },
   "author": "Andrew Wittrock",
   "license": "UNLICENSED",
@@ -20,6 +21,8 @@
     "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^8.5.4",
     "@types/node": "^22.10.1",
+    "chalk": "^5.3.0",
+    "table": "^6.9.0",
     "ts-node": "^10.1.0",
     "ts-node-dev": "^2.0.0",
     "tsc-watch": "^6.2.1",
