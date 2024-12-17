@@ -1585,10 +1585,10 @@ tree-kill@^1.2.2:
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
-ts-functional@^1.14.0:
-  version "1.20.2"
-  resolved "https://registry.yarnpkg.com/ts-functional/-/ts-functional-1.20.2.tgz#7e6c759bb08a8767aebee92c036be86c31d14a4a"
-  integrity sha512-cmEif18DaSNscp5TA0VhgHalmpvZLgKkB3oCOky0L07L4RS5atnt39FoN1i30AXKFIb3rtYCcrXOX++hx85+OA==
+ts-functional@^1.21.0:
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/ts-functional/-/ts-functional-1.21.0.tgz#9c5495cbe5a56e1fa1da081abcb6affc0117905f"
+  integrity sha512-36OG65n7qwBuiakbebeGVt0aHddHCrVNJfhz6+b0zLyn76dqa7qtN78bjZRyDyUbMfde2ZlWOonpE9kcsWluwA==
   dependencies:
     type-of "^2.0.1"
 
