@@ -1,4 +1,12 @@
 {
+    "common": {
+        "repo": "atp-common-api",
+        "branch": "main"
+    },
+    "common-shared": {
+        "repo": "atp-common-shared",
+        "branch": "main"
+    },
     "core": {
         "repo": "atp-core-api",
         "branch": "main"
