@@ -22,5 +22,13 @@
     "uac-shared": {
         "repo": "atp-uac-shared",
         "branch": "main"
+    },
+    "store": {
+        "repo": "atp-store-api",
+        "branch": "main"
+    },
+    "store-shared": {
+        "repo": "atp-store-shared",
+        "branch": "main"
     }
 }
