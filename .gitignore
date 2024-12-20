@@ -9,6 +9,7 @@ jspm_packages
 /.env
 
 _bak
+_data
 src/**
 !src/**/*.*
 dist
