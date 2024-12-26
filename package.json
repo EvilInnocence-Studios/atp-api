@@ -35,7 +35,7 @@
     "@aws-sdk/client-s3": "^3.717.0",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "crypto-js": "^4.1.1",
-    "dotenv": "^16.4.6",
+    "dotenv": "^16.4.7",
     "express": "^5.0.1",
     "express-fileupload": "^1.5.1",
     "jsonwebtoken": "^8.5.1",
