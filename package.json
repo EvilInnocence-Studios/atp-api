@@ -12,7 +12,7 @@
     "dev": "yarn copy-env && tsc-watch --onSuccess \"node ./dist/src/core/index.js\"",
     "profile": "node -r ts-node/register --prof ./index.ts",
     "status": "node ./src/core-shared/scripts/status.mjs",
-    "install-custom": "node ./src/core-shared/scripts/install-custom.js"
+    "install-custom": "node ./scripts/install-custom.js"
   },
   "author": "Andrew Wittrock",
   "license": "UNLICENSED",
