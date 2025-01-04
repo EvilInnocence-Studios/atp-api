@@ -1,15 +1,16 @@
 ToDo
 ====
+endpoints
+    - orders/cart
+uac
+    - send email on user create
+    - implement password reset flow
 implement row level security decorators
     - Need to allow for admin or non-owner overrides
-data conversion
-    - move images from server to S3 bucket
 db init
-    - insert media links
-    - need to find out if any product has more than one downloadable file
     - translate product info to tags
         - requires
         - categories
-store
-    - media
-    - files
+    - customer data
+    - order data
+    - cms data (from PHP site, not Magento, can probably copy manually)
