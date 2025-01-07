@@ -28,3 +28,34 @@ export const dbConfig = {
         pool: {min: 0, max: 1, idleTimeoutMillis: 100, reapIntervalMillis: 100},
     },
 }
+
+const appConfig = {
+    dev: {
+        publicHost: "http://localhost:3000",
+        adminHost: "http://localhost:3001",
+        apiHost: "http://localhost:3002",
+    },
+    prod: {
+        publicHost: "https://evilinnocence.com",
+        adminHost: "https://admin.evilinnocence.com",
+        apiHost: "https://api.evilinnocence.com",
+    },
+    common: {
+        supportEmail: "support@evilinnocence.com",
+        emailTemplates: {
+            forgotPassword: {
+                subject: "Reset Password",
+            },
+            forgotUserName: {
+                subject: "Forgot Username",
+            },
+        }
+    }
+}
+
+export const getAppConfig = () => {
+    return {
+        ...appConfig.common,
+        ...(process.env.ENV === "prod" ? appConfig.prod : appConfig.dev),
+    };
+}

@@ -8,7 +8,8 @@
       "esModuleInterop": true,                // Allows default imports from CommonJS modules
       "experimentalDecorators": true,         // Enable experimental support for decorators
       "emitDecoratorMetadata": true,           // Emit metadata for runtime reflection (used by libraries like TypeORM or InversifyJS)
-      "resolveJsonModule": true
+      "resolveJsonModule": true,
+      "jsx": "react",                         // Enable JSX support
     },
     "include": ["src/**/*.ts"],               // Specify files to include
     "exclude": ["node_modules/**", "dist"]    // Exclude unnecessary directories

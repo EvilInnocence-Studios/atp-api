@@ -13,6 +13,10 @@ const up = async () => {
     await uacInit.up();
     await commonInit.up();
     await storeInit.up();
+    
+    await uacInit.initData();
+    await commonInit.initData();
+    await storeInit.initData();
 }
 
 down().then(up).then(() => console.log("Done!"));
