@@ -41,6 +41,9 @@ const appConfig = {
         apiHost: "https://api.evilinnocence.com",
     },
     common: {
+        defaultUserRoleId: 3,
+        awsRegion: "us-east-1",
+        mediaBucket: "evilinnocence",
         supportEmail: "support@evilinnocence.com",
         emailTemplates: {
             forgotPassword: {
