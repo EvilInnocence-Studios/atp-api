@@ -4,6 +4,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// Increase execution time
+ini_set('max_execution_time', 1200); // 20 minutes
+
 require_once 'app/Mage.php';
 Mage::app();
 
@@ -83,6 +86,15 @@ try {
                 }
                 $customerData['orders'][] = $orderData;
             }
+
+            // Get the customer's wishlist
+            $wishlist = Mage::getModel('wishlist/wishlist')->loadByCustomer($customer->getId(), true);
+            $wishlistItems = $wishlist->getItemCollection();
+            $wishlistData = [];
+            foreach ($wishlistItems as $item) {
+                $wishlistData[] = $item->getData();
+            }
+            $customerData['wishlist'] = $wishlistData;
 
             // Output customer data
             echo json_encode($customerData);
