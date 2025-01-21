@@ -1,18 +1,15 @@
 ToDo
 ====
+orders
+    - don't return pending orders to public users
+    - purge pending orders periodically
 endpoints
     - orders/cart
 uac
     - send email on user create
-    - implement password reset flow
 implement row level security decorators
     - Need to allow for admin or non-owner overrides
 db init
-    - translate product info to tags
-        - requires
-        - categories
-    - customer data
-    - order data
     - cms data (from PHP site, not Magento, can probably copy manually)
 
 Security Tests
@@ -20,8 +17,10 @@ Security Tests
 get someone else's order
 finalize an order without paying
 get products from a pending order
+view a pending order
 access someone else's account info
 purchase BSP items when not subscribed
+order transaction failed
 
 Tech Debt
 =========
