@@ -14,3 +14,17 @@ db init
     - customer data
     - order data
     - cms data (from PHP site, not Magento, can probably copy manually)
+
+Security Tests
+==============
+get someone else's order
+finalize an order without paying
+get products from a pending order
+access someone else's account info
+purchase BSP items when not subscribed
+
+Tech Debt
+=========
+Organize types
+Organize endpoints/handlers/utils
+Organize env variables
