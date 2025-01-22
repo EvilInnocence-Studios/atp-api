@@ -1,6 +1,7 @@
 ToDo
 ====
 orders
+    - make sure BSP and brokered items can't be in orders
     - don't return pending orders to public users
     - purge pending orders periodically
 endpoints

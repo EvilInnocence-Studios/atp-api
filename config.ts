@@ -41,6 +41,7 @@ const appConfig = {
         apiHost: "https://api.evilinnocence.com",
     },
     common: {
+        siteName: "EvilInnocence Studios",
         defaultUserRoleId: 3,
         awsRegion: "us-east-1",
         mediaBucket: "evilinnocence",
@@ -52,6 +53,9 @@ const appConfig = {
             forgotUserName: {
                 subject: "Forgot Username",
             },
+            orderConfirmation: {
+                subject: "EvilInnocence Studios Order Confirmation",
+            }
         }
     }
 }
