@@ -13,3 +13,5 @@ _data
 src/**
 !src/**/*.*
 dist
+deploy
+.env.prod

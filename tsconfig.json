@@ -8,10 +8,17 @@
       "esModuleInterop": true,                // Allows default imports from CommonJS modules
       "experimentalDecorators": true,         // Enable experimental support for decorators
       "emitDecoratorMetadata": true,           // Emit metadata for runtime reflection (used by libraries like TypeORM or InversifyJS)
-      "resolveJsonModule": true,
       "jsx": "react",                         // Enable JSX support
     },
-    "include": ["src/**/*.ts"],               // Specify files to include
-    "exclude": ["node_modules/**", "dist"]    // Exclude unnecessary directories
-  }
-  
+    "include": [
+        "src/**/*.ts",
+        "./index.ts"  // This should include index.ts in the root directory
+    ],
+    "exclude": [
+      "node_modules/**",
+      "dist/**",
+      "_data/**",  // Exclude the entire _data directory and its contents
+      "deploy/**",
+      "./deploy.ts",
+    ]
+}

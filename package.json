@@ -6,10 +6,14 @@
   "scripts": {
     "init-db": "ts-node ./src/init-db.ts",
     "copy-env": "cp ./.env ./dist/.env",
-    "build": "tsc && yarn copy-env",
-    "start": "node ./dist/src/core/index.js",
+    "build": "rm -rf dist && tsc && yarn copy-env && yarn copy-package && yarn dist-install",
+    "copy-package": "cp ./package.json ./dist/package.json",
+    "dist-install": "cd ./dist && yarn install --prod",
+    "deploy": "ts-node ./deploy.ts",
+    "full-deploy": "yarn build && yarn deploy",
+    "start": "node ./dist/index.js",
     "ts-start": "ts-node ./src/core/index.ts",
-    "dev": "yarn copy-env && tsc-watch --onSuccess \"node ./dist/src/core/index.js\"",
+    "dev": "yarn copy-env && tsc-watch --onSuccess \"node ./dist/index.js\"",
     "profile": "node -r ts-node/register --prof ./index.ts",
     "status": "node ./src/core-shared/scripts/status.mjs",
     "install-custom": "node ./scripts/install-custom.js"
@@ -17,6 +21,10 @@
   "author": "Andrew Wittrock",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@aws-sdk/client-api-gateway": "^3.734.0",
+    "@aws-sdk/client-lambda": "^3.734.0",
+    "@aws-sdk/credential-providers": "^3.734.0",
+    "@types/archiver": "^6.0.3",
     "@types/crypto-js": "^4.0.2",
     "@types/express": "^5.0.0",
     "@types/express-fileupload": "^1.5.1",
@@ -26,14 +34,19 @@
     "@types/pg": "^8.11.10",
     "@types/react": "^19.0.3",
     "@types/react-dom": "^19.0.2",
+    "archiver": "^7.0.1",
+    "babel-loader": "^9.2.1",
     "chalk": "^5.3.0",
     "node-html-markdown": "^1.3.0",
+    "null-loader": "^4.0.1",
     "table": "^6.9.0",
     "throttled-queue": "^2.1.4",
     "ts-node": "^10.1.0",
     "ts-node-dev": "^2.0.0",
     "tsc-watch": "^6.2.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.717.0",
@@ -56,6 +69,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "serverless-api-boilerplate": "^0.4.2",
-    "ts-functional": "^1.21.0"
+    "serverless-http": "^3.2.0",
+    "ts-functional": "^1.22.0"
   }
 }
