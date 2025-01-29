@@ -35,22 +35,3 @@ Tech Debt
 Organize types
 Organize endpoints/handlers/utils
 Organize env variables
-
-Prod .env
-=========
-HOST_PUBLIC = https://evilinnocence.com
-HOST_ADMIN = https://admin.evilinnocence.com
-HOST_API = https://api.evilinnocence.com
-
-DB_CLIENT = cockroachdb
-DB_HOST = backstage-pass-5401.j77.aws-us-east-1.cockroachlabs.cloud
-DB_USER = daemonalchemist
-DB_PASSWORD = kH80mSH3FQTr7PxwWtxI_w
-DB_DATABASE = backstage-pass
-DB_PORT = 26257
-
-PAYPAL_CLIENT_ID = AbZPu0PPlduQf1pBCaJ1D4M2yksIycc1eptQnA9z3EcjOeBrlMjuS-II0iwybGQHQFcqySAexuZM3pxm
-PAYPAL_CLIENT_SECRET = ECecjDWgfQ3Ul94IUQjRmyMp2NMmDwWDE_nujVVPiqlmyBZclgT6torIpE3HFRGPyNAWsdGrcMvjafwf
-
-SALT = AJKLU$*(#&U$(*HQ#U%HILUN @*(NV#@P*(%&MP
-SECRET = STJE$^#46j3^J563$J^346gg36$%7654JG#%^4G4564%
