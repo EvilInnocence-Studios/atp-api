@@ -15,3 +15,4 @@ src/**
 dist
 deploy
 .env.prod
+server.zip
