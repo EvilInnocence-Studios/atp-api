@@ -1,3 +1,10 @@
+Discount ToDo
+=============
+Show sale prices on public pages
+    - ProductPrice component
+    - Cart table
+
+
 ToDo
 ====
 Make new CockroachDB and retire the old (name and password exposed)
