@@ -14,5 +14,5 @@ src/**
 !src/**/*.*
 dist
 deploy
-.env.prod
+.env.*
 server.zip

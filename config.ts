@@ -21,7 +21,7 @@ const appConfig = {
     apiHost: process.env.HOST_API,
 
     siteName: "EvilInnocence Studios",
-    defaultUserRoleId: 3,
+    defaultUserRoleId: "3",
     awsRegion: "us-east-1",
     mediaBucket: "evilinnocence",
     supportEmail: "support@evilinnocence.com",
