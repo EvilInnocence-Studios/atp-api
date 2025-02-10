@@ -1,8 +1,5 @@
 ToDo
 ====
-Fix env setup so the client is cockroachdb
-    - need to fix the id columns to be int4s to fix size issues
-Make new CockroachDB and retire the old (name and password exposed)
 orders
     - make sure BSP and brokered items can't be in orders
     - don't return pending orders to public users

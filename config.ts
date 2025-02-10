@@ -27,13 +27,13 @@ const appConfig = {
     supportEmail: "support@evilinnocence.com",
     emailTemplates: {
         forgotPassword: {
-            subject: "Reset Password",
+            subject: "EvilInnocence Sudios - Reset Password",
         },
         forgotUserName: {
-            subject: "Forgot Username",
+            subject: "EvilInnocence Studios - Forgot Username",
         },
         orderConfirmation: {
-            subject: "EvilInnocence Studios Order Confirmation",
+            subject: "EvilInnocence Studios - Order Confirmation",
         }
     }
 }
