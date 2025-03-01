@@ -22,6 +22,7 @@ const appConfig = {
 
     siteName: "EvilInnocence Studios",
     defaultUserRoleId: "3",
+    subscriptionRoleId: "4",
     awsRegion: "us-east-1",
     mediaBucket: "evilinnocence",
     supportEmail: "support@evilinnocence.com",
@@ -34,7 +35,13 @@ const appConfig = {
         },
         orderConfirmation: {
             subject: "EvilInnocence Studios - Order Confirmation",
-        }
+        },
+        roleChange: {
+            subject: "EvilInnocence Studios - Role Change",
+        },
+        newAccount: {
+            subject: "EvilInnocence Studios - New Account",
+        },
     }
 }
 
