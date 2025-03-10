@@ -17,14 +17,17 @@
     "profile": "node -r ts-node/register --prof ./index.ts",
     "status": "node ./src/core-shared/scripts/status.mjs",
     "install-custom": "node ./scripts/install-custom.js",
-    "password": "ts-node ./src/generate-password-hash.ts"
+    "password": "ts-node ./src/generate-password-hash.ts",
+    "redirects": "node ./scripts/build-redirects.js"
   },
   "author": "Andrew Wittrock",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@aws-sdk/client-api-gateway": "^3.734.0",
-    "@aws-sdk/client-lambda": "^3.734.0",
-    "@aws-sdk/credential-providers": "^3.734.0",
+    "@aws-sdk/client-api-gateway": "^3.758.0",
+    "@aws-sdk/client-cloudfront-keyvaluestore": "^3.758.0",
+    "@aws-sdk/client-lambda": "^3.758.0",
+    "@aws-sdk/credential-providers": "^3.758.0",
+    "@aws-sdk/signature-v4-crt": "^3.758.0",
     "@types/archiver": "^6.0.3",
     "@types/crypto-js": "^4.0.2",
     "@types/express": "^5.0.0",
@@ -37,8 +40,10 @@
     "@types/react-dom": "^19.0.2",
     "@types/superagent": "^8.1.9",
     "archiver": "^7.0.1",
+    "aws-sdk": "^2.1692.0",
     "babel-loader": "^9.2.1",
     "chalk": "^5.3.0",
+    "csv-parser": "^3.2.0",
     "fast-xml-parser": "^4.5.1",
     "node-html-markdown": "^1.3.0",
     "null-loader": "^4.0.1",
@@ -52,6 +57,7 @@
     "webpack-cli": "^6.0.1"
   },
   "dependencies": {
+    "@aws-sdk/client-cloudfront": "^3.758.0",
     "@aws-sdk/client-s3": "^3.717.0",
     "@aws-sdk/client-ses": "^3.723.0",
     "@aws-sdk/s3-request-presigner": "^3.717.0",
