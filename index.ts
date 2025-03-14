@@ -1,6 +1,7 @@
 import serverless from 'serverless-http';
 import app from './src/core/index';
 
+console.log(process.env);
 // Start the server
 console.log("Environment: ", process.env.ENV);
 if(process.env.ENV === 'prod') {
