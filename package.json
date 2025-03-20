@@ -4,7 +4,7 @@
   "description": "An API for the once upon a time site",
   "main": "index.js",
   "scripts": {
-    "init-db": "ts-node ./src/init-db.ts",
+    "init-db": "clear && ts-node ./src/init-db.ts",
     "copy-env": "cp ./.env ./dist/.env",
     "build": "rm -rf dist && tsc && yarn copy-env && yarn copy-package && yarn dist-install",
     "copy-package": "cp ./package.json ./dist/package.json",

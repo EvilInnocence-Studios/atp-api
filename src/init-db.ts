@@ -9,6 +9,7 @@ import { init as uacInit } from './uac/migrations/00-init';
 // 01 - Initialize discounts
 import { discounts } from './store/migrations/01-discounts';
 import { foreignKeys } from './store/migrations/02-fix-foreign-keys';
+import { preRelease } from './store/migrations/03-prerelease';
 
 const init = {
     down: async () => {
@@ -46,12 +47,23 @@ const foreignKeyMigration = {
     }
 }
 
+const preReleaseMigration = {
+    down: async () => {
+        await preRelease.down();
+    },
+    up: async () => {
+        await preRelease.up();
+        await preRelease.initData();
+    }
+}
+
 const migrationName = process.argv[2];
 const migration = switchOn(migrationName, {
-    'init':        () => init,
-    'discounts':   () => discountMigration,
-    'foreignKeys': () => foreignKeyMigration,
-    'default':     () => null
+    init:        () => init,
+    discounts:   () => discountMigration,
+    foreignKeys: () => foreignKeyMigration,
+    preRelease:  () => preReleaseMigration,
+    default:     () => null,
 });
 
 if(!migration) {
