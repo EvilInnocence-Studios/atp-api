@@ -27,11 +27,8 @@ const appConfig = {
     mediaBucket: "evilinnocence",
     supportEmail: "support@evilinnocence.com",
     emailTemplates: {
-        forgotPassword: {
-            subject: "EvilInnocence Sudios - Reset Password",
-        },
-        forgotUserName: {
-            subject: "EvilInnocence Studios - Forgot Username",
+        forgotLogin: {
+            subject: "EvilInnocence Sudios - Forgot Login Info",
         },
         orderConfirmation: {
             subject: "EvilInnocence Studios - Order Confirmation",
