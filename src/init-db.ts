@@ -5,6 +5,7 @@ import { switchOn } from 'ts-functional';
 import { init as commonInit } from './common/migrations/00-init';
 import { init as storeInit } from './store/migrations/00-init';
 import { init as uacInit } from './uac/migrations/00-init';
+import { init as subscriptionInit } from './subscription/migrations/00-init';
 
 // 01 - Initialize discounts
 import { discounts } from './store/migrations/01-discounts';
@@ -16,15 +17,18 @@ const init = {
         await storeInit.down();
         await commonInit.down();
         await uacInit.down();
+        await subscriptionInit.down();
     },
     up: async () => {
         await uacInit.up();
         await commonInit.up();
         await storeInit.up();
+        await subscriptionInit.up();
         
         await uacInit.initData();
         await commonInit.initData();
         await storeInit.initData();
+        await subscriptionInit.initData();
     }
 }
 
@@ -57,12 +61,23 @@ const preReleaseMigration = {
     }
 }
 
+const subscriptionMigration = {
+    down: async () => {
+        await subscriptionInit.down();
+    },
+    up: async () => {
+        await subscriptionInit.up();
+        await subscriptionInit.initData();
+    }
+}
+
 const migrationName = process.argv[2];
 const migration = switchOn(migrationName, {
     init:        () => init,
     discounts:   () => discountMigration,
     foreignKeys: () => foreignKeyMigration,
     preRelease:  () => preReleaseMigration,
+    subscription: () => subscriptionMigration,
     default:     () => null,
 });
 
