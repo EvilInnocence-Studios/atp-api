@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+      "baseUrl": ".",                         // Set the base URL for module resolution
       "target": "es6",                        // Must be at least ES6 to support decorators
       "module": "commonjs",                   // Module system to use
       "outDir": "dist",                       // Output directory for compiled files
@@ -9,6 +10,28 @@
       "experimentalDecorators": true,         // Enable experimental support for decorators
       "emitDecoratorMetadata": true,           // Emit metadata for runtime reflection (used by libraries like TypeORM or InversifyJS)
       "jsx": "react",                         // Enable JSX support
+      "paths": {
+        "@common": ["src/common/index.ts"],
+        "@common/*": ["src/common/*"],
+        "@common-shared": ["src/common-shared/index.ts"],
+        "@common-shared/*": ["src/common-shared/*"],
+        "@core": ["src/core/index.ts"],
+        "@core/*": ["src/core/*"],
+        "@core-shared": ["src/core-shared/index.ts"],
+        "@core-shared/*": ["src/core-shared/*"],
+        "@store": ["src/store/index.ts"],
+        "@store/*": ["src/store/*"],
+        "@store-shared": ["src/store-shared/index.ts"],
+        "@store-shared/*": ["src/store-shared/*"],
+        "@subscription": ["src/subscription/index.ts"],
+        "@subscription/*": ["src/subscription/*"],
+        "@subscription-shared": ["src/subscription-shared/index.ts"],
+        "@subscription-shared/*": ["src/subscription-shared/*"],
+        "@uac": ["src/uac/index.ts"],
+        "@uac/*": ["src/uac/*"],
+        "@uac-shared": ["src/uac-shared/index.ts"],
+        "@uac-shared/*": ["src/uac-shared/*"]
+      }
     },
     "include": [
         "src/**/*.ts",
