@@ -6,6 +6,7 @@ import { init as commonInit } from './common/migrations/00-init';
 import { init as storeInit } from './store/migrations/00-init';
 import { init as uacInit } from './uac/migrations/00-init';
 import { init as subscriptionInit } from './subscription/migrations/00-init';
+import { init as brokerageInit } from './brokered-products-plugin/migrations/00-init';
 
 // 01 - Initialize discounts
 import { discounts } from './store/migrations/01-discounts';
@@ -18,17 +19,20 @@ const init = {
         await commonInit.down();
         await uacInit.down();
         await subscriptionInit.down();
+        await brokerageInit.down();
     },
     up: async () => {
         await uacInit.up();
         await commonInit.up();
         await storeInit.up();
         await subscriptionInit.up();
+        await brokerageInit.up();
         
         await uacInit.initData();
         await commonInit.initData();
         await storeInit.initData();
         await subscriptionInit.initData();
+        await brokerageInit.initData();
     }
 }
 
@@ -71,14 +75,25 @@ const subscriptionMigration = {
     }
 }
 
+const brokerageMigration = {
+    down: async () => {
+        await brokerageInit.down();
+    },
+    up: async () => {
+        await brokerageInit.up();
+        await brokerageInit.initData();
+    }
+}
+
 const migrationName = process.argv[2];
 const migration = switchOn(migrationName, {
-    init:        () => init,
-    discounts:   () => discountMigration,
-    foreignKeys: () => foreignKeyMigration,
-    preRelease:  () => preReleaseMigration,
+    init:         () => init,
+    discounts:    () => discountMigration,
+    foreignKeys:  () => foreignKeyMigration,
+    preRelease:   () => preReleaseMigration,
     subscription: () => subscriptionMigration,
-    default:     () => null,
+    brokerage:    () => brokerageMigration,
+    default:      () => null,
 });
 
 if(!migration) {
