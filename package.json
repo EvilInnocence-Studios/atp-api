@@ -1,5 +1,5 @@
 {
-  "name": "api.evilinnocence.com",
+  "name": "atp-api",
   "version": "0.0.1",
   "description": "An API for the once upon a time site",
   "main": "index.js",
@@ -20,7 +20,7 @@
     "password": "ts-node ./src/generate-password-hash.ts",
     "redirects": "node ./scripts/build-redirects.js",
     "webpack": "webpack --config ./webpack.config.js",
-    "deploy-server": "rsync -avz -e 'ssh -i ~/credentials/account-info/aws-ubuntu/EvilInnocence.pem' ./deploy/*.js ubuntu@testbed.wittrock.us:/var/www/api.evilinnocence.com",
+    "deploy-server": "./scripts/deploy-server.sh",
     "full-deploy-server": "clear && yarn webpack && yarn deploy-server"
   },
   "author": "Andrew Wittrock",

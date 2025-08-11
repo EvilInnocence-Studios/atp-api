@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Load environment variables from .env file
+source ../.env
+
+rsync -avz -e "ssh -i $PRIVATE_KEY_PATH" ./deploy/*.js $PROD_SERVER_USER@$PROD_SERVER_HOST:$PROD_SERVER_PATH
