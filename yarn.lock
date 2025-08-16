@@ -6478,11 +6478,6 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-readline@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/readline/-/readline-1.3.0.tgz#c580d77ef2cfc8752b132498060dc9793a7ac01c"
-  integrity sha512-k2d6ACCkiNYz222Fs/iNze30rRJ1iIicW7JuX/7/cozvih6YCkFZH+J6mAFDVgv0dRBaAyr4jDqC95R2y4IADg==
-
 rechoir@^0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/rechoir/-/rechoir-0.8.0.tgz#49f866e0d32146142da3ad8f0eff352b3215ff22"
@@ -7021,10 +7016,10 @@ tree-kill@^1.2.2:
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
-ts-functional@1.23.1:
-  version "1.23.1"
-  resolved "https://registry.yarnpkg.com/ts-functional/-/ts-functional-1.23.1.tgz#2bdfa192aa2a496f0eab32ff290469e8caa6639a"
-  integrity sha512-RP+JjcjoOfnj+qeVv6FZbzbh5p8W1gQa9zn1v2ypD07J5kAmlPbW7eDTlLuHZQ8POENfOlNGkhDsxml40TZ2iw==
+ts-functional@^1.24.0:
+  version "1.24.0"
+  resolved "https://registry.yarnpkg.com/ts-functional/-/ts-functional-1.24.0.tgz#a1ed89c2d852729394d1c90cecbb0e358426dae8"
+  integrity sha512-UglKQpMutfiIyp/5mtYLAh3XGu7ej1GJsu0GFYhICjMXvrdHmbdOWFXOdMrKu1/1VBT94EhyiEhYJ6f58mAUkQ==
   dependencies:
     type-of "^2.0.1"
 

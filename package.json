@@ -20,7 +20,7 @@
     "password": "ts-node ./src/generate-password-hash.ts",
     "redirects": "node ./scripts/build-redirects.js",
     "webpack": "webpack --config ./webpack.config.js",
-    "deploy-server": "./scripts/deploy-server.sh",
+    "deploy-server": "./scripts/deploy-server",
     "full-deploy-server": "clear && yarn webpack && yarn deploy-server",
     "migrate": "clear && ts-node ./src/core/runMigration.ts"
   },
@@ -83,6 +83,6 @@
     "react-dom": "^19.0.0",
     "serverless-http": "^3.2.0",
     "superagent": "^10.1.1",
-    "ts-functional": "1.23.1"
+    "ts-functional": "^1.24.0"
   }
 }
