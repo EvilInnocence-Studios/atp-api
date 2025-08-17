@@ -10,6 +10,7 @@
     "uac":                             { "repo": "atp-uac-api",                         "branch": "main" },
     "uac-shared":                      { "repo": "atp-uac-shared",                      "branch": "main" },
 
+    "subscription-products-plugin":    { "repo": "atp-subscription-products-plugin-api", "branch": "main" },
     "brokered-products-plugin":        { "repo": "atp-brokered-products-plugin-api",    "branch": "main"},
     "brokered-products-plugin-shared": { "repo": "atp-brokered-products-plugin-shared", "branch": "main"}
 }
