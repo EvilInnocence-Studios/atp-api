@@ -3,11 +3,12 @@ import { migrations as brokeredProductsMigrations } from "./src/brokered-product
 import { migrations as subscriptionMigrations } from "./src/subscription/migrations";
 import { migrations as subscriptionProductsMigrations } from "./src/subscription-products-plugin/migrations";
 import { migrations as storeMigrations } from "./src/store/migrations";
-
+import { migrations as commonMigrations } from "./src/common/migrations";
 export const migrations = [
     ...coreMigrations,
     ...storeMigrations,
     ...subscriptionMigrations,
     ...brokeredProductsMigrations,
     ...subscriptionProductsMigrations,
+    ...commonMigrations,
 ];
