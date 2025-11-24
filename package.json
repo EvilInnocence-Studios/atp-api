@@ -16,13 +16,16 @@
     "dev": "yarn copy-env && tsc-watch --onSuccess \"node ./dist/index.js\"",
     "profile": "node -r ts-node/register --prof ./index.ts",
     "status": "node ./src/core-shared/scripts/status.mjs",
-    "install-custom": "node ./scripts/install-custom.js",
+    "install-custom": "node ./scripts/install-custom.js && yarn generate-api-config && yarn generate-caching-config && yarn generate-migrations",
     "password": "ts-node ./src/generate-password-hash.ts",
     "redirects": "node ./scripts/build-redirects.js",
     "webpack": "webpack --config ./webpack.config.js",
     "deploy-server": "./scripts/deploy-server",
     "full-deploy-server": "clear && yarn webpack && yarn deploy-server",
-    "migrate": "clear && ts-node ./src/core/runMigration.ts"
+    "migrate": "clear && ts-node ./src/core/runMigration.ts",
+    "generate-api-config": "ts-node ./scripts/generate-api-config.ts",
+    "generate-caching-config": "ts-node ./scripts/generate-caching-config.ts",
+    "generate-migrations": "ts-node ./scripts/generate-migrations.ts"
   },
   "author": "Andrew Wittrock",
   "license": "UNLICENSED",
