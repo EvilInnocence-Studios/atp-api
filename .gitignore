@@ -16,3 +16,7 @@ dist
 deploy
 .env.*
 server.zip
+
+api.config.ts
+migrations.ts
+caching.config.ts
