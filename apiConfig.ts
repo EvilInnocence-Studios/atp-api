@@ -4,6 +4,7 @@ import { apiConfig as commonConfig } from "./src/common";
 import { apiConfig as storeConfig } from "./src/store";
 import { apiConfig as subscriptionConfig } from "./src/subscription";
 import { apiConfig as uacConfig } from "./src/uac";
+import { apiConfig as comicConfig } from "./src/comic";
 
 export const apiConfigs = [
     commonConfig,
@@ -12,4 +13,5 @@ export const apiConfigs = [
     subscriptionConfig,
     brokerageConfig,
     subscriptionProductConfig,
+    comicConfig,
 ];
