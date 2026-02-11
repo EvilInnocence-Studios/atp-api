@@ -20,6 +20,7 @@ const generateApiConfig = () => {
 
     const imports: string[] = [];
     const configs: string[] = [];
+    const setupMigrations: string[] = [];
 
     modules.forEach(moduleName => {
         const modulePath = path.join(srcDir, moduleName);
@@ -27,12 +28,25 @@ const generateApiConfig = () => {
 
         if (fs.existsSync(indexFile)) {
             const content = fs.readFileSync(indexFile, 'utf-8');
-            // Check for "export {apiConfig}" or "export const apiConfig"
-            if (content.includes('export {apiConfig}') || content.includes('export { apiConfig }') || content.includes('export const apiConfig')) {
-                const camelName = kebabToCamel(moduleName);
-                const configName = `${camelName}Config`;
-                imports.push(`import { apiConfig as ${configName} } from "./src/${moduleName}";`);
-                configs.push(configName);
+            const camelName = kebabToCamel(moduleName);
+            const importedItems: string[] = [];
+
+            // Check for "apiConfig" export using regex to avoid false positives (e.g., apiConfigs)
+            if (/\bexport\s+.*?\bapiConfig\b/.test(content)) {
+                const configAlias = `${camelName}Config`;
+                importedItems.push(`apiConfig as ${configAlias}`);
+                configs.push(configAlias);
+            }
+
+            // Check for "setupMigrations" export using regex
+            if (/\bexport\s+.*?\bsetupMigrations\b/.test(content)) {
+                const setupAlias = `${camelName}Setup`;
+                importedItems.push(`setupMigrations as ${setupAlias}`);
+                setupMigrations.push(`...${setupAlias}`);
+            }
+
+            if (importedItems.length > 0) {
+                imports.push(`import { ${importedItems.join(', ')} } from "./src/${moduleName}";`);
             }
         }
     });
@@ -41,6 +55,10 @@ const generateApiConfig = () => {
 
 export const apiConfigs = [
     ${configs.join(',\n    ')},
+];
+
+export const setupMigrations = [
+    ${setupMigrations.join(',\n    ')},
 ];
 `;
 

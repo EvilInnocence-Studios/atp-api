@@ -23,6 +23,7 @@
     "deploy-server": "./scripts/deploy-server",
     "full-deploy-server": "clear && yarn webpack && yarn deploy-server",
     "migrate": "clear && ts-node ./src/core/runMigration.ts",
+    "setupDb": "clear && ts-node ./src/core/runDbSetup.ts",
     "generate-api-config": "ts-node ./scripts/generate-api-config.ts",
     "generate-caching-config": "ts-node ./scripts/generate-caching-config.ts",
     "generate-migrations": "ts-node ./scripts/generate-migrations.ts"
