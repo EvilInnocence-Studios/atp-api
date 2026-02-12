@@ -1,7 +1,7 @@
 export const salt:string = process.env.SALT  || "";
 export const secret:string = process.env.SECRET || "";
 
-export const dbConfig = {
+export const getDbConfig = () => ({
     client: process.env.DB_CLIENT,
     connection: {
         host: process.env.DB_HOST || "",
@@ -12,7 +12,7 @@ export const dbConfig = {
         ssl: process.env.DB_SSL === "on",
     },
     pool: {min: 0, max: 1, idleTimeoutMillis: 100, reapIntervalMillis: 100},
-}
+});
 
 export const getAppConfig = () => ({
     publicHost: process.env.HOST_PUBLIC,
