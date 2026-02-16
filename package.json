@@ -4,7 +4,7 @@
   "description": "An API for the once upon a time site",
   "main": "index.js",
   "scripts": {
-    "init-db": "clear && ts-node ./src/init-db.ts",
+    "init-db": "ts-node ./src/init-db.ts",
     "copy-env": "cp ./.env ./dist/.env",
     "build": "rm -rf dist && tsc && yarn copy-env && yarn copy-package && yarn dist-install",
     "copy-package": "cp ./package.json ./dist/package.json",
@@ -21,10 +21,10 @@
     "redirects": "node ./scripts/build-redirects.js",
     "webpack": "webpack --config ./webpack.config.js",
     "deploy-server": "./scripts/deploy-server",
-    "full-deploy-server": "clear && yarn webpack && yarn deploy-server",
-    "migrate": "clear && ts-node ./src/core/runMigration.ts",
-    "migration-status": "clear && ts-node ./src/core/migration-status.ts",
-    "setupDb": "clear && ts-node ./src/core/runDbSetup.ts",
+    "full-deploy-server": "yarn webpack && yarn deploy-server",
+    "migrate": "ts-node ./src/core/runMigration.ts",
+    "migration-status": "ts-node ./src/core/migration-status.ts",
+    "setupDb": "ts-node ./src/core/runDbSetup.ts",
     "generate-api-config": "ts-node ./scripts/generate-api-config.ts",
     "generate-caching-config": "ts-node ./scripts/generate-caching-config.ts",
     "generate-migrations": "ts-node ./scripts/generate-migrations.ts"

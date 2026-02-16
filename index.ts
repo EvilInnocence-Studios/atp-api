@@ -1,5 +1,5 @@
 import serverless from 'serverless-http';
-import app from './src/core/index';
+import app from './src/core/app';
 
 // console.log(process.env);
 // Start the server
