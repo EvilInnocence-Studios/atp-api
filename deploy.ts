@@ -24,6 +24,7 @@ async function main() {
         // await connectToApiGateway(LAMBDA_FUNCTION_NAME, API_GATEWAY_NAME, API_GATEWAY_DOMAIN, ACCOUNT_ID, LAMBDA_FUNCTION_NAME, API_GATEWAY_DOMAIN_CERT_ARN);
     } catch (error:any) {
         console.error(`Deployment failed: ${error.message}`);
+        process.exit(1);
     }
 }
 
