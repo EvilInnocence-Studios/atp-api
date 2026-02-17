@@ -9,6 +9,7 @@
     "build": "rm -rf dist && tsc && yarn copy-env && yarn copy-package && yarn dist-install",
     "copy-package": "cp ./package.json ./dist/package.json",
     "dist-install": "cd ./dist && yarn install --prod",
+    "cloudfront": "ts-node ./src/core/cloudfront.ts",
     "deploy": "ts-node ./deploy.ts",
     "full-deploy": "yarn build && yarn deploy",
     "start": "node ./dist/index.js",
@@ -66,7 +67,7 @@
     "webpack-cli": "^6.0.1"
   },
   "dependencies": {
-    "@aws-sdk/client-cloudfront": "^3.758.0",
+    "@aws-sdk/client-cloudfront": "^3.991.0",
     "@aws-sdk/client-s3": "^3.717.0",
     "@aws-sdk/client-ses": "^3.723.0",
     "@aws-sdk/credential-providers": "^3.758.0",
