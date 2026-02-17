@@ -1,5 +1,6 @@
 import "dotenv/config";
 import path from 'path';
+import fs from 'fs';
 import { zipDirectory } from './src/core/zip';
 import {uploadToLambda} from './src/core/lambda';
 import {connectToApiGateway} from './src/core/apiGateway';
@@ -20,7 +21,25 @@ async function main() {
 
     try {
         await zipDirectory(deployDir, zipFilePath);
-        await uploadToLambda(zipFilePath, LAMBDA_FUNCTION_NAME, ACCOUNT_ID, LAMBDA_ROLE, envFilePath, S3BUCKET, S3KEY);
+        const functionUrl = await uploadToLambda(zipFilePath, LAMBDA_FUNCTION_NAME, ACCOUNT_ID, LAMBDA_ROLE, envFilePath, S3BUCKET, S3KEY);
+        
+        // Strip https:// and trailing slash from Function URL for CF Origin
+        const originDomain = functionUrl.replace("https://", "").replace("/", "");
+        console.log(`Successfully deployed Lambda. Function URL: ${functionUrl}`);
+        console.log(`Setting CF_ORIGIN_DOMAIN_NAME to: ${originDomain}`);
+
+        // Update local .env
+        const envPath = path.join(__dirname, '.env');
+        if (fs.existsSync(envPath)) {
+            let envContent = fs.readFileSync(envPath, 'utf8');
+            if (envContent.includes('CF_ORIGIN_DOMAIN_NAME=')) {
+                envContent = envContent.replace(/CF_ORIGIN_DOMAIN_NAME=.*/, `CF_ORIGIN_DOMAIN_NAME=${originDomain}`);
+            } else {
+                envContent += `\nCF_ORIGIN_DOMAIN_NAME=${originDomain}\n`;
+            }
+            fs.writeFileSync(envPath, envContent);
+        }
+
         // await connectToApiGateway(LAMBDA_FUNCTION_NAME, API_GATEWAY_NAME, API_GATEWAY_DOMAIN, ACCOUNT_ID, LAMBDA_FUNCTION_NAME, API_GATEWAY_DOMAIN_CERT_ARN);
     } catch (error:any) {
         console.error(`Deployment failed: ${error.message}`);
