@@ -21,16 +21,16 @@ const generateMigrations = () => {
     const imports: string[] = [];
     const migrationArrays: string[] = [];
 
-    modules.forEach(moduleName => {
+    modules.forEach((moduleName:string) => {
         const modulePath = path.join(srcDir, moduleName);
-        const migrationsDir = path.join(modulePath, 'migrations');
-        const migrationsIndex = path.join(migrationsDir, 'index.ts');
+        const migrationsIndex = path.join(modulePath, 'index.ts');
+        const indexContents = fs.existsSync(migrationsIndex) ? fs.readFileSync(migrationsIndex, 'utf-8') : "";
 
-        if (fs.existsSync(migrationsDir) && fs.existsSync(migrationsIndex)) {
+        if (indexContents.includes("export const migrations")) {
             // Assume it exports "migrations" as per convention
             const camelName = kebabToCamel(moduleName);
             const migrationName = `${camelName}Migrations`;
-            imports.push(`import { migrations as ${migrationName} } from "./src/${moduleName}/migrations";`);
+            imports.push(`import { migrations as ${migrationName} } from "./src/${moduleName}";`);
             migrationArrays.push(`...${migrationName}`);
         }
     });
