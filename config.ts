@@ -1,5 +1,5 @@
-export const salt:string = process.env.SALT  || "";
-export const secret:string = process.env.SECRET || "";
+export const salt = ():string => process.env.SALT  || "";
+export const secret = ():string => process.env.SECRET || "";
 
 export const getDbConfig = () => ({
     client: process.env.DB_CLIENT,
