@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const srcDir = path.join(__dirname, '../src');
-const outputFile = path.join(__dirname, '../caching.config.ts');
+const outputFile = path.join(__dirname, '../caching.config.js');
 
 const generateCachingConfig = () => {
     if (!fs.existsSync(srcDir)) {
@@ -19,7 +19,7 @@ const generateCachingConfig = () => {
 
     modules.forEach(moduleName => {
         const modulePath = path.join(srcDir, moduleName);
-        const cachingFile = path.join(modulePath, 'caching.ts');
+        const cachingFile = path.join(modulePath, 'caching.js');
 
         if (fs.existsSync(cachingFile)) {
             const content = fs.readFileSync(cachingFile, 'utf-8');
@@ -27,7 +27,7 @@ const generateCachingConfig = () => {
             const match = content.match(/export\s+const\s+(\w+)/);
             if (match && match[1]) {
                 const exportName = match[1];
-                imports.push(`import { ${exportName} } from "./src/${moduleName}/caching";`);
+                imports.push(`import { ${exportName} } from "./src/${moduleName}/caching.js";`);
                 cacheArrays.push(`...${exportName}`);
             }
         }
