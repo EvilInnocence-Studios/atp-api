@@ -15,20 +15,20 @@
         "repo": "atp-common-shared",
         "branch": "main"
     },
-    "analytics": {
-        "repo": "atp-analytics-api",
-        "branch": "main"
-    },
-    "analytics-shared": {
-        "repo": "atp-analytics-shared",
-        "branch": "main"
-    },
     "uac": {
         "repo": "atp-uac-api",
         "branch": "main"
     },
     "uac-shared": {
         "repo": "atp-uac-shared",
+        "branch": "main"
+    },
+    "analytics": {
+        "repo": "atp-analytics-api",
+        "branch": "main"
+    },
+    "analytics-shared": {
+        "repo": "atp-analytics-shared",
         "branch": "main"
     },
     "store": {
