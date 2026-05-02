@@ -1,47 +1,164 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",                         // Set the base URL for module resolution
-      "target": "es6",                        // Must be at least ES6 to support decorators
-      "module": "commonjs",                   // Module system to use
-      "outDir": "dist",                       // Output directory for compiled files
-      "strict": true,                         // Enable strict type-checking options
-      "skipLibCheck": true,                   // Skip type checking of all declaration files
-      "esModuleInterop": true,                // Allows default imports from CommonJS modules
-      "experimentalDecorators": true,         // Enable experimental support for decorators
-      "emitDecoratorMetadata": true,           // Emit metadata for runtime reflection (used by libraries like TypeORM or InversifyJS)
-      "jsx": "react",                         // Enable JSX support
-      "paths": {
-        "@common": ["src/common/index.ts"],
-        "@common/*": ["src/common/*"],
-        "@common-shared": ["src/common-shared/index.ts"],
-        "@common-shared/*": ["src/common-shared/*"],
-        "@core": ["src/core/index.ts"],
-        "@core/*": ["src/core/*"],
-        "@core-shared": ["src/core-shared/index.ts"],
-        "@core-shared/*": ["src/core-shared/*"],
-        "@store": ["src/store/index.ts"],
-        "@store/*": ["src/store/*"],
-        "@store-shared": ["src/store-shared/index.ts"],
-        "@store-shared/*": ["src/store-shared/*"],
-        "@subscription": ["src/subscription/index.ts"],
-        "@subscription/*": ["src/subscription/*"],
-        "@subscription-shared": ["src/subscription-shared/index.ts"],
-        "@subscription-shared/*": ["src/subscription-shared/*"],
-        "@uac": ["src/uac/index.ts"],
-        "@uac/*": ["src/uac/*"],
-        "@uac-shared": ["src/uac-shared/index.ts"],
-        "@uac-shared/*": ["src/uac-shared/*"]
-      }
-    },
-    "include": [
-        "src/**/*.ts",
-        "./index.ts"  // This should include index.ts in the root directory
-    ],
-    "exclude": [
-      "node_modules/**",
-      "dist/**",
-      "_data/**",  // Exclude the entire _data directory and its contents
-      "deploy/**",
-      "./deploy.ts",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "dist",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "jsx": "react",
+    "paths": {
+      "@common": [
+        "src/common"
+      ],
+      "@common/*": [
+        "src/common/*"
+      ],
+      "@common-shared": [
+        "src/common-shared"
+      ],
+      "@common-shared/*": [
+        "src/common-shared/*"
+      ],
+      "@core": [
+        "src/core"
+      ],
+      "@core/*": [
+        "src/core/*"
+      ],
+      "@core-shared": [
+        "src/core-shared"
+      ],
+      "@core-shared/*": [
+        "src/core-shared/*"
+      ],
+      "@store": [
+        "src/store"
+      ],
+      "@store/*": [
+        "src/store/*"
+      ],
+      "@store-shared": [
+        "src/store-shared"
+      ],
+      "@store-shared/*": [
+        "src/store-shared/*"
+      ],
+      "@subscription": [
+        "src/subscription/index.ts"
+      ],
+      "@subscription/*": [
+        "src/subscription/*"
+      ],
+      "@subscription-shared": [
+        "src/subscription-shared/index.ts"
+      ],
+      "@subscription-shared/*": [
+        "src/subscription-shared/*"
+      ],
+      "@uac": [
+        "src/uac"
+      ],
+      "@uac/*": [
+        "src/uac/*"
+      ],
+      "@uac-shared": [
+        "src/uac-shared"
+      ],
+      "@uac-shared/*": [
+        "src/uac-shared/*"
+      ],
+      "@analytics": [
+        "src/analytics"
+      ],
+      "@analytics/*": [
+        "src/analytics/*"
+      ],
+      "@analytics-shared": [
+        "src/analytics-shared"
+      ],
+      "@analytics-shared/*": [
+        "src/analytics-shared/*"
+      ],
+      "@brokered-products-plugin": [
+        "src/brokered-products-plugin"
+      ],
+      "@brokered-products-plugin/*": [
+        "src/brokered-products-plugin/*"
+      ],
+      "@brokered-products-plugin-shared": [
+        "src/brokered-products-plugin-shared"
+      ],
+      "@brokered-products-plugin-shared/*": [
+        "src/brokered-products-plugin-shared/*"
+      ],
+      "@comic": [
+        "src/comic"
+      ],
+      "@comic/*": [
+        "src/comic/*"
+      ],
+      "@comic-shared": [
+        "src/comic-shared"
+      ],
+      "@comic-shared/*": [
+        "src/comic-shared/*"
+      ],
+      "@donation-products-plugin": [
+        "src/donation-products-plugin"
+      ],
+      "@donation-products-plugin/*": [
+        "src/donation-products-plugin/*"
+      ],
+      "@donation-products-plugin-shared": [
+        "src/donation-products-plugin-shared"
+      ],
+      "@donation-products-plugin-shared/*": [
+        "src/donation-products-plugin-shared/*"
+      ],
+      "@gallery": [
+        "src/gallery"
+      ],
+      "@gallery/*": [
+        "src/gallery/*"
+      ],
+      "@gallery-shared": [
+        "src/gallery-shared"
+      ],
+      "@gallery-shared/*": [
+        "src/gallery-shared/*"
+      ],
+      "@theming": [
+        "src/theming"
+      ],
+      "@theming/*": [
+        "src/theming/*"
+      ],
+      "@theming-shared": [
+        "src/theming-shared"
+      ],
+      "@theming-shared/*": [
+        "src/theming-shared/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "./index.ts"
+  ],
+  "exclude": [
+    "node_modules/**",
+    "dist/**",
+    "_data/**",
+    "deploy/**",
+    "./deploy.ts"
+  ],
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
     ]
+  }
 }

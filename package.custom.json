@@ -62,5 +62,21 @@
     "comic-shared": {
         "repo": "atp-comic-shared",
         "branch": "main"
+    },
+    "gallery": {
+        "repo": "atp-gallery-api",
+        "branch": "main"
+    },
+    "gallery-shared": {
+        "repo": "atp-gallery-shared",
+        "branch": "main"
+    },
+    "theming": {
+        "repo": "atp-theming-api",
+        "branch": "main"
+    },
+    "theming-shared": {
+        "repo": "atp-theming-shared",
+        "branch": "main"
     }
 }
