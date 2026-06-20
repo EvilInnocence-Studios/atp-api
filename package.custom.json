@@ -39,6 +39,14 @@
         "repo": "atp-store-shared",
         "branch": "main"
     },
+    "gallery": {
+        "repo": "atp-gallery-api",
+        "branch": "main"
+    },
+    "gallery-shared": {
+        "repo": "atp-gallery-shared",
+        "branch": "main"
+    },
     "brokered-products-plugin": {
         "repo": "atp-brokered-products-plugin-api",
         "branch": "main"
@@ -55,12 +63,32 @@
         "repo": "atp-donation-products-plugin-shared",
         "branch": "main"
     },
+    "subscription-products-plugin": {
+        "repo": "atp-subscription-products-plugin-api",
+        "branch": "main"
+    },
+    "subscription": {
+        "repo": "atp-subscription-api",
+        "branch": "main"
+    },
+    "subscription-shared": {
+        "repo": "atp-subscription-shared",
+        "branch": "main"
+    },
     "comic": {
         "repo": "atp-comic-api",
         "branch": "main"
     },
     "comic-shared": {
         "repo": "atp-comic-shared",
+        "branch": "main"
+    },
+    "theming": {
+        "repo": "atp-theming-api",
+        "branch": "main"
+    },
+    "theming-shared": {
+        "repo": "atp-theming-shared",
         "branch": "main"
     }
 }
